@@ -12,7 +12,7 @@ public class Rol {
     @Column(name = "rol_consecutivo")
     private Integer id;
 
-    @Column(name = "rol_descripcion")
+    @Column(name = "rol_descripcion", length = 25)
     private String descripcion;
 
 }

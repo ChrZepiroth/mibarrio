@@ -11,13 +11,13 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "prd_codi")
     private Integer id;
-    @Column(name = "prd_name")
+    @Column(name = "prd_name", length = 25)
     private String nombre_producto;
-    @Column(name = "prd_descripcion")
+    @Column(name = "prd_descripcion", length = 25)
     private String descripcion;
     @Column(name = "prd_precio")
     private Float precio;
-    @Column(name = "prd_imagen")
+    @Column(name = "prd_imagen", length = 25)
     private String imagen;
     @ManyToOne
     @JoinColumn(name = "prd_cat_codi", referencedColumnName = "cat_codi")

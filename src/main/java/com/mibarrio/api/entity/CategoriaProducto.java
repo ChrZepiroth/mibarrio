@@ -11,7 +11,7 @@ public class CategoriaProducto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="cat_codi")
     private Integer id;
-    @Column(name="cat_descripcion")
+    @Column(name="cat_descripcion", length = 25)
     private String descripcion;
 
 }

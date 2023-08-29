@@ -11,7 +11,7 @@ public class UnidadMedida {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "uni_codi")
     private Integer id;
-    @Column(name = "uni_descripcion")
+    @Column(name = "uni_descripcion", length = 25)
     private String descripcion;
 
 }
