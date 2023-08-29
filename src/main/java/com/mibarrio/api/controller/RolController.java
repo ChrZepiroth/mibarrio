@@ -15,10 +15,6 @@ public class RolController {
     @Autowired
     private RolService service;
 
-    @PostMapping("/save")
-    public ResponseEntity<Rol> register(@RequestBody Rol rol) {
-        return new ResponseEntity<>(service.register(rol), HttpStatus.CREATED);
-    }
 
     @GetMapping("/list")
     public ResponseEntity<List<Rol>>  getAll() {
@@ -28,17 +24,6 @@ public class RolController {
     @GetMapping("/search/{identidficador}")
     public ResponseEntity<Rol> getById(@PathVariable("identidficador") Integer id) {
         return ResponseEntity.ok(service.getById(id));
-    }
-
-    @PutMapping("/update")
-    public ResponseEntity<Rol> update(@RequestBody Rol rol) {
-        return new ResponseEntity<Rol>(service.register(rol), HttpStatus.CREATED);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
-        service.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }

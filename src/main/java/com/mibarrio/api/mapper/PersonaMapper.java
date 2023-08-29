@@ -7,17 +7,18 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+
 @Mapper(componentModel = "spring", uses = {RolMapper.class})
 public interface PersonaMapper extends GenericMapper<Persona, PersonaDTO>{
     @Override
     @Mappings({
-            @Mapping(source = "rol", target = "rol.id")
+            @Mapping(source = "idRol", target = "rol.id")
     })
     Persona toEntity(PersonaDTO dto);
 
     @Override
     @Mappings({
-            @Mapping(source = "rol.id", target = "rol")
+            @Mapping(source = "rol.id", target = "idRol")
     })
     PersonaDTO toDto(Persona entity);
 

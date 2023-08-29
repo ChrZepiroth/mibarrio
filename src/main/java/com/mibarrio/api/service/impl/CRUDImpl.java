@@ -1,6 +1,7 @@
 package com.mibarrio.api.service.impl;
 
-import com.mibarrio.api.exceptions.ModeloNotFoundExeption;
+import com.mibarrio.api.entity.DBAUsers;
+import com.mibarrio.api.exceptions.RequestException;
 import com.mibarrio.api.repository.GenericRepository;
 import com.mibarrio.api.service.CRUD;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public abstract class CRUDImpl<T, ID> implements CRUD<T, ID> {
     @Override
     public T getById(ID id) {
         return getRepository().findById(id)
-                .orElseThrow(() -> new ModeloNotFoundExeption("ID NO ENCONTRADO " + id));
+                .orElseThrow(() -> new RuntimeException("ID NO ENCONTRADO " + id));
     }
 
     @Override
@@ -37,4 +38,6 @@ public abstract class CRUDImpl<T, ID> implements CRUD<T, ID> {
         getById(id);
         getRepository().deleteById(id);
     }
+
+
 }

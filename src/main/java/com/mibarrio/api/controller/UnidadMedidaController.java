@@ -15,10 +15,7 @@ public class UnidadMedidaController {
     @Autowired
     private UnidadMedidaServiceImpl service;
 
-    @PostMapping("/save")
-    public ResponseEntity<UnidadMedida> register(@RequestBody UnidadMedida c) {
-        return new ResponseEntity<>(service.register(c), HttpStatus.CREATED);
-    }
+
 
     @GetMapping("/list")
     public ResponseEntity<List<UnidadMedida>>  getAll() {
@@ -30,15 +27,6 @@ public class UnidadMedidaController {
         return ResponseEntity.ok(service.getById(id));
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<UnidadMedida> update(@RequestBody UnidadMedida c) {
-        return new ResponseEntity<UnidadMedida>(service.register(c), HttpStatus.CREATED);
-    }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
-        service.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
 
 }

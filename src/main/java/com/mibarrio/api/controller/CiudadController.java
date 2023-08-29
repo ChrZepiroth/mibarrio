@@ -15,11 +15,6 @@ public class CiudadController {
     @Autowired
     private CiudadServiceImpl service;
 
-    @PostMapping("/save")
-    public ResponseEntity<Ciudad> register(@RequestBody Ciudad c) {
-        return new ResponseEntity<>(service.register(c), HttpStatus.CREATED);
-    }
-
     @GetMapping("/list")
     public ResponseEntity<List<Ciudad>>  getAll() {
         return ResponseEntity.ok(service.getAll());
@@ -30,15 +25,5 @@ public class CiudadController {
         return ResponseEntity.ok(service.getById(id));
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Ciudad> update(@RequestBody Ciudad c) {
-        return new ResponseEntity<Ciudad>(service.register(c), HttpStatus.CREATED);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
-        service.delete(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
 
 }

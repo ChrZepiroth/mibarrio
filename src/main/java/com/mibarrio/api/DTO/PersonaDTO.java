@@ -10,11 +10,11 @@ public class PersonaDTO {
     private String tid;
     private String nombre;
     private String apellido;
-    private String razon_social;
-    private String tipo_persona;
+    private String razonSocial;
+    private String tipoPersona;
     private String correo;
     private String telefono;
     private String direccion;
-    private Integer rol;
+    private Integer idRol;
 
 }

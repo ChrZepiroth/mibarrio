@@ -2,7 +2,6 @@ package com.mibarrio.api.controller;
 
 import com.mibarrio.api.DTO.PersonaDTO;
 import com.mibarrio.api.entity.Persona;
-import com.mibarrio.api.entity.Rol;
 import com.mibarrio.api.service.impl.PersonaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping("persona")
@@ -18,8 +19,8 @@ public class PersonaController {
     private PersonaServiceImpl service;
 
     @PostMapping("/save")
-    public ResponseEntity<Persona> register(@RequestBody Persona p) {
-        return new ResponseEntity<>(service.register(p), HttpStatus.CREATED);
+    public ResponseEntity<PersonaDTO> register(@RequestBody PersonaDTO p) {
+        return new ResponseEntity<>(service.registerDto(p), HttpStatus.CREATED);
     }
 
     @GetMapping("/list")
@@ -33,8 +34,8 @@ public class PersonaController {
         return ResponseEntity.ok(personas);
     }
 
-    @GetMapping("/search/{identidficador}")
-    public ResponseEntity<Persona> getById(@PathVariable("identidficador") String id) {
+    @GetMapping("/search/{identificador}")
+    public ResponseEntity<Persona> getById(@PathVariable("identificador") String id) {
         return ResponseEntity.ok(service.getById(id));
     }
 

@@ -2,9 +2,7 @@ package com.mibarrio.api.mapper;
 
 
 import com.mibarrio.api.DTO.DBAUsersDTO;
-import com.mibarrio.api.DTO.PersonaDTO;
 import com.mibarrio.api.entity.DBAUsers;
-import com.mibarrio.api.entity.Persona;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -13,13 +11,13 @@ import org.mapstruct.Mappings;
 public interface DBAUsersMapper extends GenericMapper<DBAUsers, DBAUsersDTO>{
     @Override
     @Mappings({
-            @Mapping(source = "persona", target = "persona.id")
+            @Mapping(source = "idPer", target = "persona.id")
     })
     DBAUsers toEntity(DBAUsersDTO dto);
 
     @Override
     @Mappings({
-            @Mapping(source = "persona.id", target = "persona")
+            @Mapping(source = "persona.id", target = "idPer")
     })
     DBAUsersDTO toDto(DBAUsers entity);
 

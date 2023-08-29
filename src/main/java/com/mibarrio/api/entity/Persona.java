@@ -17,16 +17,16 @@ public class Persona {
     @Column(name = "per_apellido")
     private String apellido;
     @Column(name = "per_razon_social")
-    private String razon_social;
+    private String razonSocial;
     @Column(name = "per_tipo")
-    private String tipo_persona;
+    private String tipoPersona;
     @Column(name = "per_correo")
     private String correo;
     @Column(name = "per_telefono")
     private String telefono;
     @Column(name = "per_direccion")
     private String direccion;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "per_rol", referencedColumnName = "rol_consecutivo")
     private Rol rol;
 

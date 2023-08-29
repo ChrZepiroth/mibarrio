@@ -4,6 +4,7 @@ package com.mibarrio.api.service;
 
 import com.mibarrio.api.DTO.PersonaDTO;
 import com.mibarrio.api.entity.Persona;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

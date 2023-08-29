@@ -22,7 +22,7 @@ public class DBAUsers {
     private String pass;
 
     @Column(name = "dba_fecha_login")
-    private Timestamp fecha_login;
+    private Timestamp fechaLogin;
 
     @OneToOne
     @JoinColumn(name = "dba_per_num_iden", referencedColumnName = "per_num_iden")
